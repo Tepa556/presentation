@@ -1,40 +1,102 @@
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Инструменты визуализации: KVM vs QEMU</title>
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme">
+    <script src="dist/reveal.js"></script>
+    <style>
+        /* Добавьте свои стили, если нужно */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
 
-		<title>reveal.js</title>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>Инструменты визуализации</h1>
+                <h2>KVM vs QEMU</h2>
+            </section>
+            <section>
+                <h2>Что такое KVM?</h2>
+                <p>KVM (Kernel-based Virtual Machine) — это виртуализационная технология, встроенная в ядро Linux.</p>
+                <img src="./kvm_logo.png" alt="KVM Logo" >
+            </section>
+            <section>
+                <h2>Преимущества KVM</h2>
+                <ul>
+                    <li>Высокая производительность</li>
+                    <li>Поддержка аппаратной виртуализации</li>
+                    <li>Интеграция с Linux</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Что такое QEMU?</h2>
+                <p>QEMU — это эмулятор и виртуализатор, который позволяет запускать операционные системы и приложения на различных архитектурах.</p>
+                <img src="./QEMU_logo.png" alt="QEMU Logo" style="margin-top: -20%;">
+            </section>
+            <section>
+                <h2>Преимущества QEMU</h2>
+                <ul>
+                    <li>Поддержка множества архитектур</li>
+                    <li>Гибкость и расширяемость</li>
+                    <li>Эмуляция аппаратного обеспечения</li>
+                </ul>
+            </section>
+            <section>
+                <h2>KVM vs QEMU</h2>
+                <p>KVM использует QEMU для управления виртуальными машинами, обеспечивая высокую производительность и гибкость.</p>
+            </section>
+            <section>
+                <h2>Сравнение</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Критерий</th>
+                            <th>KVM</th>
+                            <th>QEMU</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Производительность</td>
+                            <td>Высокая</td>
+                            <td>Низкая (при эмуляции)</td>
+                        </tr>
+                        <tr>
+                            <td>Поддержка архитектур</td>
+                            <td>Ограниченная (x86, ARM и др.)</td>
+                            <td>Широкая</td>
+                        </tr>
+                        <tr>
+                            <td>Гибкость</td>
+                            <td>Низкая</td>
+                            <td>Высокая</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section>
+                <h2>Выводы</h2>
+                <p>KVM и QEMU дополняют друг друга: KVM обеспечивает высокую производительность, а QEMU — гибкость и поддержку множества архитектур.</p>
+                <img src="./final_image.png" alt="Архитектура KVM и QEMU"  style="margin-top: -3%; height: 400px;">
+            </section>
+            <section>
+                <h2>Вопросы?</h2>
+                <p>Спасибо за внимание!</p>
+            </section>
+        </div>
+    </div>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+    <script>
+        // Инициализация Reveal.js
+        Reveal.initialize();
+    </script>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
-
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
-
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+</body>
 </html>
